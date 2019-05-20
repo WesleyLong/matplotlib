@@ -1,0 +1,23 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from pylab import mpl
+
+mpl.rcParams['font.sans-serif'] = ['SimHei']  # 指定默认字体
+plt.rcParams['axes.unicode_minus'] = False  # 解决负数坐标显示问题
+# x的个数决定了样本量
+x = np.arange(-1, 1, 0.02)
+# y为理想函数
+y = 2 * np.sin(x * 2.3) + 0.5 * x ** 3
+# y1为离散的拟合数据
+y1 = y + 0.5 * (np.random.rand(len(x)) - 0.5)
+z1 = np.polyfit(x, y, 6)
+# 生成多项式对象
+p1 = np.poly1d(z1)
+pp1 = p1(x)
+##################################
+plt.plot(x, y, color='g', linestyle='-', marker='', label=u'理想曲线')
+plt.plot(x, y1, color='m', linestyle='', marker='o', label=u'拟合数据')
+plt.plot(x, pp1, color='b', linestyle='-', marker='.', label=u"拟合曲线")
+# 把拟合的曲线在这里画出来
+plt.legend(loc='upper left')
+plt.show()

@@ -14,6 +14,7 @@ def func(x, a, b):
 
 x = np.arange(1, 10, 0.1)
 y = log(x)
+yn = func(x, 10, 1)
 plt.title("自然对数函数")
-plt.plot(x, y)
+plt.plot(x, yn)
 plt.show()

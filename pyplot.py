@@ -30,7 +30,7 @@ plt.rcParams['axes.unicode_minus'] = False
 # plt.title("指数函数")
 # plt.plot(x, y)
 #
-x = np.arange(0.05, 3, 0.05)
+x = np.arange(1, 100, 1)
 y = [math.log(a, math.e) for a in x]
 plt.title("自然对数函数")
 plt.plot(x, y)
